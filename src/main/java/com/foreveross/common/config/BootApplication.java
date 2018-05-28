@@ -16,6 +16,7 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerA
 import org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration;
 import org.springframework.boot.web.filter.OrderedCharacterEncodingFilter;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
@@ -39,6 +40,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @ComponentScan(basePackages = {"com.foreveross.qdp", "com.foreveross.common",
         "com.foreveross.extension"}, excludeFilters = {
         @Filter(type = FilterType.REGEX, pattern = {"com.foreveross.extension.activiti.*"})})
+@EnableEurekaClient
 public class BootApplication extends WebMvcConfigurerAdapter {
 
     public static void main(String[] args) throws Exception {
