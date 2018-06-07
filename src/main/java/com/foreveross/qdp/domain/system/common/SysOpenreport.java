@@ -337,8 +337,8 @@ public class SysOpenreport implements Serializable {
         ValidateHelper validate = ValidateHelper.create();
         if ("add".equals(type)) {
             {//初始化值
-                setUpdateTime(new java.util.Date());
-                setCreateTime(new java.util.Date());
+                setUpdateTime(new Date());
+                setCreateTime(new Date());
             }
             // validte the field
             // "NO":"不用验证","email":"EMAIL","tel":"电话号码","mobile":"手机号码","zipcode":"邮政编码","url":"网址",
@@ -369,7 +369,7 @@ public class SysOpenreport implements Serializable {
             }
         } else if ("edit".equals(type)) {
             {//初始化值
-                setUpdateTime(new java.util.Date());
+                setUpdateTime(new Date());
                 setCreateTime(null);
             }
             // validte the field

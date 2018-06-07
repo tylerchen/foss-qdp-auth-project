@@ -33,6 +33,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * @author <a href="mailto:iffiff1@gmail.com">Tyler Chen</a>
  * @since Oct 23, 2017
  */
+@EnableEurekaClient
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class,
         DataSourceTransactionManagerAutoConfiguration.class, FreeMarkerAutoConfiguration.class,
         TransactionAutoConfiguration.class})
@@ -40,10 +41,9 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @ComponentScan(basePackages = {"com.foreveross.qdp", "com.foreveross.common",
         "com.foreveross.extension"}, excludeFilters = {
         @Filter(type = FilterType.REGEX, pattern = {"com.foreveross.extension.activiti.*"})})
-@EnableEurekaClient
 public class BootApplication extends WebMvcConfigurerAdapter {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         SpringApplication.run(BootApplication.class, args);
     }
 

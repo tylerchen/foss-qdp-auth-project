@@ -9,7 +9,6 @@ package com.foreveross.common.web;
 
 import freemarker.template.SimpleHash;
 import freemarker.template.Template;
-import freemarker.template.TemplateException;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
@@ -22,7 +21,6 @@ import org.springframework.web.servlet.view.freemarker.FreeMarkerView;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.Locale;
 import java.util.Map;
 
@@ -83,8 +81,7 @@ public class SpringFreeMarkerView extends FreeMarkerView {
         super.render(model, request, response);
     }
 
-    protected void processTemplate(Template template, SimpleHash model, HttpServletResponse response)
-            throws IOException, TemplateException {
+    protected void processTemplate(Template template, SimpleHash model, HttpServletResponse response) {
         try {
             super.processTemplate(template, model, response);
         } catch (Exception e) {

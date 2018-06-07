@@ -447,10 +447,7 @@ public class AuthMenu implements Serializable {
             }
             domain = get(domain.getParentId());
         }
-        if (domain != null && (domain.getMaxLevel() - 1) >= count) {
-            return true;
-        }
-        return false;
+        return domain != null && (domain.getMaxLevel() - 1) >= count;
     }
 
     /**
@@ -499,8 +496,8 @@ public class AuthMenu implements Serializable {
         ValidateHelper validate = ValidateHelper.create();
         if ("add".equals(type)) {
             {//初始化值
-                setUpdateTime(new java.util.Date());
-                setCreateTime(new java.util.Date());
+                setUpdateTime(new Date());
+                setCreateTime(new Date());
             }
             {// 设置默认值
                 AuthMenu parent = get(getParentId());
@@ -558,7 +555,7 @@ public class AuthMenu implements Serializable {
             }
         } else if ("edit".equals(type)) {
             {//初始化值
-                setUpdateTime(new java.util.Date());
+                setUpdateTime(new Date());
                 setCreateTime(null);
             }
             {// 设置默认值

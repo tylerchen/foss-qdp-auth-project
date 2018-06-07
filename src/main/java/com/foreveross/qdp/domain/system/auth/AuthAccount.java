@@ -471,12 +471,12 @@ public class AuthAccount implements Serializable {
         if ("add".equals(type)) {
             {//初始化值
                 if (StringUtils.isNotBlank(getLoginPasswd())) {
-                    setLoginPasswd(org.iff.infra.util.MD5Helper.secondSalt(org.iff.infra.util.MD5Helper.firstSalt(getLoginPasswd())));
+                    setLoginPasswd(MD5Helper.secondSalt(MD5Helper.firstSalt(getLoginPasswd())));
                 } else {
                     setLoginPasswd(null);
                 }
-                setUpdateTime(new java.util.Date());
-                setCreateTime(new java.util.Date());
+                setUpdateTime(new Date());
+                setCreateTime(new Date());
             }
             // validte the field
             // "NO":"不用验证","email":"EMAIL","tel":"电话号码","mobile":"手机号码","zipcode":"邮政编码","url":"网址",
@@ -513,11 +513,11 @@ public class AuthAccount implements Serializable {
         } else if ("edit".equals(type)) {
             {//初始化值
                 if (StringUtils.isNotBlank(getLoginPasswd())) {
-                    setLoginPasswd(org.iff.infra.util.MD5Helper.secondSalt(org.iff.infra.util.MD5Helper.firstSalt(getLoginPasswd())));
+                    setLoginPasswd(MD5Helper.secondSalt(MD5Helper.firstSalt(getLoginPasswd())));
                 } else {
                     setLoginPasswd(null);
                 }
-                setUpdateTime(new java.util.Date());
+                setUpdateTime(new Date());
                 setCreateTime(null);
             }
             // validte the field
