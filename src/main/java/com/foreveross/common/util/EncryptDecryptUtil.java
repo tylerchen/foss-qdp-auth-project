@@ -129,7 +129,7 @@ public class EncryptDecryptUtil {
         try {
             if (!StringUtils.isBlank(parameter)) {
                 return RSAHelper.encrypt(parameter,
-                        RSAHelper.getPublicKeyFromBase64(ConstantBean.getProperty("rsa.key.private.base64")));
+                        RSAHelper.getPublicKeyFromBase64(ConstantBean.getProperty("rsa.key.public.base64")));
             }
         } catch (Exception e) {
             Logger.warn("Encrype-Decrypt RSA encrypt error!", e);
